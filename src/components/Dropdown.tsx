@@ -1,5 +1,5 @@
 // src/components/Dropdown.tsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 interface DropdownProps {
   title: string;
