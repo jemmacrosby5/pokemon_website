@@ -1,12 +1,12 @@
-import '../App.css'
+import NavBar from '../components/NavBar'
 
-function App() {
+function Home() {
 
   return (
     <>
-      <p> pokemon</p>
+    <NavBar/>
     </>
   )
 }
 
-export default App
+export default Home
