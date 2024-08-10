@@ -4,7 +4,7 @@ function NavBar() {
 
   return (
     <>
-      <p> pokemon</p>
+      <p className="font-extrabold"> pokemon</p>
     </>
   )
 }
