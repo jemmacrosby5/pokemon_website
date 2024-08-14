@@ -1,10 +1,12 @@
-
+import NavBar from "../components/NavBar"
 
 function Card() {
 
   return (
     <>
-      <p> Card</p>
+      <NavBar>
+        <p> Card</p>
+      </NavBar>
     </>
   )
 }

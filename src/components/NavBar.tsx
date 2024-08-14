@@ -2,7 +2,7 @@ import Logo from "./Logo"
 import Dropdown from "./Dropdown"
 import { NavBarBackground, NavBarSections } from '../styles/NavBarStyles.ts';
 
-function NavBar() {
+const NavBar: React.FC = () => {
 
   return (
     <>
