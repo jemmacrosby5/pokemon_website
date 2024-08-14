@@ -4,9 +4,8 @@ function Card() {
 
   return (
     <>
-      <NavBar>
+      <NavBar/>
         <p> Card</p>
-      </NavBar>
     </>
   )
 }

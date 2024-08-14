@@ -3,9 +3,8 @@ function About() {
 
   return (
     <>
-      <NavBar>
+      <NavBar/>
         <p> About</p>
-      </NavBar>
     </>
   )
 }
