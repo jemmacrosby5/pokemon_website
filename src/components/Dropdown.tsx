@@ -1,4 +1,3 @@
-// src/components/Dropdown.tsx
 import React, { useState } from 'react';
 
 interface DropdownProps {
@@ -15,7 +14,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, children }) => {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="text-xl p-2 rounded hover:bg-gray-100 focus:outline-none"
+        className='text-xl p-2 rounded'
       >
         {title}
       </button>
