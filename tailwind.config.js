@@ -10,7 +10,7 @@ export default {
         sans: ['Roboto', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
-        'custom-navy': '#003049',
+        'custom-gray': '#1f2937',
         'custom-red': '#d62828',
         'custom-orange': '#f77f00',
         'custom-yellow': '#fcbf49',

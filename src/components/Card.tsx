@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { TestCardData } from '../testDataInterface.ts';
 import { fetchCardData } from '../utils/APICaller.ts';
 import CardImage from './CardImage.tsx';
+import CardPageSkeleton from './LoadingSkeletons/CardPage.tsx';
 
 function Card() {
   const [cardData, setCardData] = useState<TestCardData | undefined>(undefined);
@@ -12,7 +13,6 @@ function Card() {
     try {
       const data: TestCardData | undefined = await fetchCardData();
       setCardData(data);
-      console.log(data)
       setLoading(false);
     } catch (e) {
       console.error('Error loading card data:', e);
@@ -27,12 +27,23 @@ function Card() {
 
   return (
     <>
-      <p>Name: {cardData?.data.name}</p>
-      <p>Image URL: {cardData?.data?.images?.large}</p>
-      {cardData?.data?.images?.large && (
-        <CardImage URL={cardData.data.images.large} clickable={false} cardId={cardData?.data.id}/>
+      {loading ? (
+        <CardPageSkeleton />
+      ) : (
+        <>
+          <div className='flex flex-row m-4 gap-4'>
+            {cardData?.data?.images?.large && (
+              <CardImage URL={cardData.data.images.large} clickable={false} cardId={cardData?.data.id} />
+            )}
+            <div className=''>
+              <p>Name: {cardData?.data?.name}</p>
+              <p>ID: {cardData?.data?.id}</p>
+            </div>
+          </div>
+        </>
       )}
     </>
+
   )
 }
 
