@@ -1,10 +1,11 @@
-function Card() {
+import Card from '../components/Card'
+function CardPage() {
 
   return (
     <>
-        <p> Card</p>
+      <Card />
     </>
   )
 }
 
-export default Card
+export default CardPage

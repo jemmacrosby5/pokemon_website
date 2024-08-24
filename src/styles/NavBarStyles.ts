@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NavBarBackground = styled.div`
-  background-color: #FFA400;
+  background-color: #d62828;
   color: white;
   padding: 4px;
   border: none;
@@ -14,7 +14,6 @@ export const NavBarSections = styled.div`
   gap: 2rem;
   display: flex;
   flex-direction: row;
-
 `;
 
 export const NavBarLink = styled.a`

@@ -12,6 +12,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NavBar from './components/NavBar.tsx'
+import Footer from './components/Footer.tsx'
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <NavBar/>
+    <main>
     <RouterProvider router={router} />
+    </main>
+    <Footer/>
   </StrictMode>,
 )
