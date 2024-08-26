@@ -9,7 +9,7 @@ const NavBar: React.FC = () => {
         <NavBarBackground>
             <Logo/>
             <NavBarSections>
-              <a href="/card/1" className="text-xl p-2 rounded">Cards</a>
+              <a href="/cards" className="text-xl p-2 rounded">Cards</a>
             
               <Dropdown title="Sets">
                   <a href="/sets/rubysapphire" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Ruby Sapphire</a>

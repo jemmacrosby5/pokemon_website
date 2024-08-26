@@ -2,7 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Home from './routes/Home.tsx'
 import Error from './routes/Error'
-import Card from './routes/Card.tsx'
+import Cards from './routes/Cards.tsx'
+import CardDetails from './routes/CardDetails.tsx'
 import Sets from './routes/Sets.tsx'
 import SetDetails from './routes/SetDetails.tsx'
 import About from './routes/About.tsx'
@@ -21,8 +22,12 @@ const router = createBrowserRouter([
     errorElement: <Error />
   },
   {
-    path: "/card/:cardId",
-    element: <Card />,
+    path: "/cards",
+    element: <Cards />,
+  },
+  {
+    path: "/cards/:cardId",
+    element: <CardDetails />,
   },
   {
     path: "/sets",
