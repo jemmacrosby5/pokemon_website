@@ -18,7 +18,7 @@ import Footer from './components/Footer.tsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <Home />,
     errorElement: <Error />
   },
   {
@@ -43,12 +43,13 @@ const router = createBrowserRouter([
   },
 ]);
 
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <NavBar/>
+    <NavBar />
     <main>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </main>
-    <Footer/>
+    <Footer />
   </StrictMode>,
 )

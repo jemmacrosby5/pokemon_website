@@ -24,7 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, children }) => {
       >
         <div className='flex items-center gap-1'>
           {title}
-          {caretUp ? <img src={caretUpSVG} className='h-5'/> : <img src={caretDownSVG} className='h-5'/>}
+          {caretUp ? <img src={caretUpSVG} className='h-5' /> : <img src={caretDownSVG} className='h-5' />}
         </div>
 
       </button>

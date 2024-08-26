@@ -1,9 +1,9 @@
-import Card from '../components/Card'
 function CardPage() {
 
   return (
     <>
-      <Card />
+      <p>Card search coming soon!</p>
+      <p>Want to see the beedril page? <a href="/cards/1">Click here!</a></p>
     </>
   )
 }

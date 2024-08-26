@@ -1,11 +1,11 @@
-
+import Card from '../components/Card'
 function CardDetails() {
 
     return (
-      <>
-        <p> Card Details</p>
-      </>
+        <>
+            <Card />
+        </>
     )
-  }
-  
-  export default CardDetails
+}
+
+export default CardDetails
