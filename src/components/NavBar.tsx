@@ -1,21 +1,39 @@
 import Logo from "./Logo"
 import Dropdown from "./Dropdown"
+import NavBarMobile from './NavBarMobile.tsx'
+import { NavBarBackground, NavBarSections } from '../styles/NavBarStyles.ts';
+import { useEffect, useState } from "react";
 
-function NavBar() {
+const NavBar: React.FC = () => {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  const updateMediaWidth = () => {
+    setIsMobile(window.innerWidth < 1024);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMediaWidth);
+    return () => window.removeEventListener("resize", updateMediaWidth);
+  });
 
   return (
     <>
-        <div className="flex flex-row items-center gap-8 border-b shadow-md bg-slate-200 px-4 py-2">
-            <Logo/>
-            <button className="text-xl p-2 rounded hover:bg-gray-100 focus:outline-none">Cards</button>
-            
+      {!isMobile ? (
+        <NavBarBackground>
+          <Logo />
+          <NavBarSections>
+            <a href="/cards" className="text-xl p-2 rounded">Cards</a>
+
             <Dropdown title="Sets">
-                <a href="/sets/rubysapphire" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Ruby Sapphire</a>
-                <a href="/sets/celebrations" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Celebrations</a>
-                <a href="/sets/151" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">151</a>
+              <a href="/sets/rubysapphire" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Ruby Sapphire</a>
+              <a href="/sets/celebrations" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Celebrations</a>
+              <a href="/sets/151" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">151</a>
             </Dropdown>
-            <button className="text-xl p-2 rounded hover:bg-gray-100 focus:outline-none">About</button>
-        </div>
+            <a href="/about" className="text-xl p-2 rounded">About</a>
+          </NavBarSections>
+        </NavBarBackground>) :
+        <NavBarMobile />}
     </>
   )
 }

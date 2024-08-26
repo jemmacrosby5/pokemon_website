@@ -2,7 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Home from './routes/Home.tsx'
 import Error from './routes/Error'
-import Card from './routes/Card.tsx'
+import Cards from './routes/Cards.tsx'
+import CardDetails from './routes/CardDetails.tsx'
 import Sets from './routes/Sets.tsx'
 import SetDetails from './routes/SetDetails.tsx'
 import About from './routes/About.tsx'
@@ -11,16 +12,22 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import NavBar from './components/NavBar.tsx'
+import Footer from './components/Footer.tsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <Home />,
     errorElement: <Error />
   },
   {
-    path: "/card/:cardId",
-    element: <Card />,
+    path: "/cards",
+    element: <Cards />,
+  },
+  {
+    path: "/cards/:cardId",
+    element: <CardDetails />,
   },
   {
     path: "/sets",
@@ -36,8 +43,13 @@ const router = createBrowserRouter([
   },
 ]);
 
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <NavBar />
+    <main>
+      <RouterProvider router={router} />
+    </main>
+    <Footer />
   </StrictMode>,
 )
