@@ -1,13 +1,6 @@
 import CardArray from "../components/CardArray";
-import CardImage from "../components/CardImage";
 
 function Home() {
-
-  const testImageURLs = [{image:"https://images.pokemontcg.io/ex11/1_hires.png", id:"ex11-1"},
-    {image:"https://images.pokemontcg.io/ex3/100_hires.png", id:"ex3-100"},
-    {image:"https://images.pokemontcg.io/ex6/15_hires.png", id:"ex6-15"},
-    {image:"https://images.pokemontcg.io/ex2/20_hires.png", id:"ex2-20"},
-    {image:"https://images.pokemontcg.io/ex3/8_hires.png", id:"ex3-8"}]
 
   return (
     <>

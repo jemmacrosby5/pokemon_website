@@ -12,7 +12,7 @@ function CardArray(){
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const exampleCards: Array<string> = ['ex11-1', 'ex3-100', 'ex6-15', 'ex2-20', 'ex3-8'];
+            const exampleCards: Array<string> = ['ex11-1', 'ex3-100', 'ex6-15', 'ex3-7', 'ex3-8'];
             
             const cardDataArray = await Promise.all(
               exampleCards.map(async (cardId) => {
