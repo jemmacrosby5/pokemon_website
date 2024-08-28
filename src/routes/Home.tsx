@@ -1,4 +1,5 @@
-import CardImage from "../components/CardImage"
+import CardArray from "../components/CardArray";
+import CardImage from "../components/CardImage";
 
 function Home() {
 
@@ -21,15 +22,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col m-4 md:flex-row justify-center gap-4">
-        {testImageURLs.map(function (image, index) {
-          return (
-            <div key={index}>
-              <CardImage URL={image.image} clickable={true} cardId={image.id}></CardImage>
-            </div>
-          )
-        })}
-      </div>
+      <CardArray/>
 
       <div className="flex flex-row justify-center mx-auto">
         <div className="m-4 bg-slate-800 h-72 w-1/3 rounded">
