@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { TestCardData } from '../testDataInterface.ts';
-import { fetchCardData } from '../utils/APICaller.ts';
+import { TestCardData } from '../utils/testDataInterface.ts';
+import { fetchTestCardData } from '../utils/APICaller.ts';
 import CardImage from './CardImage.tsx';
 import CardPageSkeleton from './LoadingSkeletons/CardPage.tsx';
 
@@ -11,7 +11,7 @@ function Card() {
 
   async function loadCardData() {
     try {
-      const data: TestCardData | undefined = await fetchCardData();
+      const data: TestCardData | undefined = await fetchTestCardData();
       setCardData(data);
       setLoading(false);
     } catch (e) {
@@ -41,6 +41,9 @@ function Card() {
             </div>
           </div>
         </>
+      )}
+      {error && (
+        <p>oh no theres an error</p>
       )}
     </>
 

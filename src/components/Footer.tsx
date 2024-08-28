@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
                             <img src={github} className='h-8' />
                             <p className="text-white">Frontend: jemmacrosby5</p>
                         </a>
-                        <a className='flex flex-row gap-2 items-center'>
+                        <a className='flex flex-row gap-2 items-center' href="https://github.com/davebat35">
                             <img src={github} className='h-8' />
-                            <p className="text-white">Data pipeline: davidbates</p>
+                            <p className="text-white">Data pipeline: davebat35</p>
                         </a>
                     </div>
                 </div>
