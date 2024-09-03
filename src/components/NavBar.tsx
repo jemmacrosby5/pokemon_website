@@ -12,7 +12,6 @@ const NavBar: React.FC = () => {
   const openMenu = () => {
     setShowMenu(!showMenu)
   }
-  console.log(showMenu)
 
   return (
     <div className="bg-custom-red flex flex-col md:flex-row items-center text-white p-4 relative font-sans">

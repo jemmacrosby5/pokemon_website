@@ -3,7 +3,7 @@ import {fetchCardData} from '../utils/APICaller.ts';
 import { CardData } from "../utils/cardInterfaces.ts";
 import CardImage from "./CardImage.tsx";
 import CardCarousel from "./CardCarousel.tsx";
-import CardPageSkeleton from "./LoadingSkeletons/CardPage.tsx";
+import CardPageSkeleton from "./LoadingSkeletons/CardArray.tsx";
 
 function CardArray(){
 
@@ -19,7 +19,6 @@ function CardArray(){
             const cardDataArray = await Promise.all(
               exampleCards.map(async (cardId) => {
                 const cardData = await fetchCardData(cardId);
-                console.log(cardData)
                 return cardData;
               })
             );
