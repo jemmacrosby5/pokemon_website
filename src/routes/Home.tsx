@@ -15,14 +15,16 @@ function Home() {
         </div>
       </div>
 
-      <CardArray/>
+      <CardArray />
 
-      <div className="flex flex-row justify-center mx-auto">
-        <div className="m-4 bg-slate-800 h-72 w-1/3 rounded">
-          <p className="text-white">I'm a graph</p>
-        </div>
-        <div className="m-4 bg-slate-800 h-72 w-1/3 rounded">
-          <p className="text-white">I'm a graph</p>
+      <div className="bg-slate-200">
+        <div className="flex lg:flex-row justify-center mx-auto flex-col items-center ">
+          <div className="m-4 bg-slate-800 h-72 w-2/3 lg:w-full lg:mx-12 rounded mx-2 flex items-center justify-center">
+            <p className="text-white">I'm a graph</p>
+          </div>
+          <div className="m-4 bg-slate-800 h-72 w-2/3 lg:w-full lg:mx-12 rounded mx-2 flex items-center justify-center">
+            <p className="text-white">I'm a graph</p>
+          </div>
         </div>
       </div>
 

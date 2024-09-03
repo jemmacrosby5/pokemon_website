@@ -3,6 +3,7 @@ import {fetchCardData} from '../utils/APICaller.ts';
 import { CardData } from "../utils/cardInterfaces.ts";
 import CardImage from "./CardImage.tsx";
 import CardCarousel from "./CardCarousel.tsx";
+import CardPageSkeleton from "./LoadingSkeletons/CardPage.tsx";
 
 function CardArray(){
 
@@ -37,14 +38,17 @@ function CardArray(){
 
     return(
         <>
+        <p className="text-xl mt-6 ml-20 font-bold">Top 5 most expensive cards:</p>
         {loading && (
-            <p>I'm just loading, one sec...</p>
+          <>
+            <CardPageSkeleton/>
+            </>
         )}
-        {!error && !loading && cardArray &&(
+        {!error && !loading && cardArray && (
             <>
-            <p className="text-xl mt-6 ml-20 font-bold">Here's some cards:</p>
+            
             <div className="hidden lg:block">
-            <div className="flex flex-col m-4 md:flex-row justify-center gap-4">
+            <div className="flex flex-col p-4 md:flex-row justify-center gap-4 overflow-hidden">
             {cardArray.map(function (card, index) {
               return (
                 <div key={index}>
