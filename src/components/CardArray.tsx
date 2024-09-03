@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {fetchCardData} from '../utils/APICaller.ts';
 import { CardData } from "../utils/cardInterfaces.ts";
 import CardImage from "./CardImage.tsx";
+import CardCarousel from "./CardCarousel.tsx";
 
 function CardArray(){
 
@@ -41,15 +42,21 @@ function CardArray(){
         )}
         {!error && !loading && cardArray &&(
             <>
-            <p className="ml-12 font-bold">Here's some cards:</p>
+            <p className="text-xl mt-6 ml-20 font-bold">Here's some cards:</p>
+            <div className="hidden lg:block">
             <div className="flex flex-col m-4 md:flex-row justify-center gap-4">
             {cardArray.map(function (card, index) {
               return (
                 <div key={index}>
-                  <CardImage URL={card.small_image} clickable={true} cardId={card.id}></CardImage>
+                  <CardImage URL={card.large_image} clickable={true} cardId={card.id}></CardImage>
                 </div>
               )
             })}
+            </div>
+          </div>
+
+          <div className="lg:hidden">
+          <CardCarousel cardArray={cardArray}/>
           </div>
           </>
         )}

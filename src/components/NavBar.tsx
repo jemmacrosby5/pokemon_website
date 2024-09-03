@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
   console.log(showMenu)
 
   return (
-    <div className="bg-custom-red flex flex-col md:flex-row items-center text-white p-4 relative">
+    <div className="bg-custom-red flex flex-col md:flex-row items-center text-white p-4 relative font-sans">
       <div className="md:hidden flex justify-between items-center w-full">
         <button onClick={openMenu} className="p-2">
           {showMenu ? (
