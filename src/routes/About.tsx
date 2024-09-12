@@ -1,8 +1,51 @@
+import { useEffect } from "react";
+import { CardData } from "../utils/interfaces";
+
 function About() {
+
+  async function fetchTest(): Promise<CardData> {
+    try {
+      const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getTest`);
+      console.log(res)
+      
+      if (!res.ok) {
+        throw new Error(`Response status: ${res.status}`);
+      }
+  
+      const data: CardData = await res.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching card data:', error);
+      throw new Error('Failed to fetch card data.');
+    }
+  }
+
+
+  async function fetchCardData(id: string): Promise<CardData> {
+    try {
+      const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getCardTest/${id}`);
+      console.log(res)
+      
+      if (!res.ok) {
+        throw new Error(`Response status: ${res.status}`);
+      }
+  
+      const data: CardData = await res.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching card data:', error);
+      throw new Error('Failed to fetch card data.');
+    }
+  }
+
+  useEffect(() => {
+    fetchTest();
+    
+  }, []);
 
   return (
     <>
-      <body className="flex flex-col h-full m-2 gap-2">
+      <div className="flex flex-col h-full m-2 gap-2">
         <div className="flex gap-2">
           <div className="w-1/2 bg-blue-500 flex items-center justify-center">
             <div className="flex flex-col items-center m-2">
@@ -23,7 +66,10 @@ function About() {
         <div className="bg-yellow-300 h-fill">
           <p className="text-white text-3xl">Architecture diagram</p>
         </div>
-      </body>
+        <div>
+          <p></p>
+        </div>
+      </div>
     </>
   )
 }

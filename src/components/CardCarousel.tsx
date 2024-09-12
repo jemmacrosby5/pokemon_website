@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { CardData } from "../utils/cardInterfaces"
+import { CardData } from "../utils/interfaces"
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 
 interface props {

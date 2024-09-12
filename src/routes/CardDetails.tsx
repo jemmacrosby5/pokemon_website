@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CardData } from '../utils/cardInterfaces.ts';
+import { CardData } from '../utils/interfaces.ts';
 import { fetchCardData } from '../utils/APICaller.ts';
 import CardImage from '../components/CardImage.tsx';
 import CardSkeleton from '../components/LoadingSkeletons/Card.tsx';
@@ -14,10 +14,9 @@ function CardDetails() {
 
     async function loadCardData() {
         try {
-            if (cardId) { 
+            if (cardId) {
                 const data = await fetchCardData(cardId);
-                setCardData(data.data);
-                console.log(cardData)
+                setCardData(data);
                 setLoading(false);
             }
         } catch (e) {
@@ -32,27 +31,41 @@ function CardDetails() {
     }, [cardId]);
 
     return (
-        <>
+        <div className='flex flex-rowx mx-10 my-8 w-fill'>
             {loading ? (
-                <CardSkeleton />
+                <div className='bg-blue-300 w-1/2'>
+                    <CardSkeleton />
+                </div>
             ) : (
                 <>
-                    <div className='flex flex-row m-4 gap-4'>
-                        {cardData?.data?.images?.large && (
-                            <CardImage URL={cardData.data.images.large} clickable={false} cardId={cardData?.data.id} />
+                    <div className='flex m-4 gap-4 justify-center w-1/2'>
+                        {cardData?.large_image && (
+                            <CardImage URL={cardData?.large_image} clickable={false} cardId={cardData?.id} />
                         )}
-                        <div className=''>
-                            <p>Name: {cardData?.data?.name}</p>
-                            <p>ID: {cardData?.data?.id}</p>
+
+                    </div>
+                    <div className='flex flex-col w-full align-middle bg-slate-200 rounded px-8 py-4'>
+                        <div className='border-stone-950 border-b-2 flex justify-between'>
+                            <div>
+                                <p className='text-2xl font-extrabold'>{(cardData?.name)?.toUpperCase()}</p>
+                                <p className='text-lg'>{cardData?.supertype} - {cardData?.subtype}</p>
+                            </div>
+                            <div className='justify-end'>
+                                <p className='text-lg '>HP {cardData?.hp}</p>
+                                <p className='text-lg'>PokeDex no. {cardData?.number}</p>
+
+                            </div>
+                        </div>
+                        <div>
                         </div>
                     </div>
                 </>
+
             )}
             {error && (
                 <p>oh no theres an error</p>
             )}
-        </>
-
+        </div>
     )
 }
 
