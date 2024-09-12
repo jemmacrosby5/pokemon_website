@@ -1,9 +1,13 @@
+import { useParams } from 'react-router-dom';
 
 function SetDetails() {
 
+  const { setId } = useParams();
+
   return (
     <>
-      <p> Set Details</p>
+      <p> Set Details For:</p>
+      <p>{setId}</p>
     </>
   )
 }
