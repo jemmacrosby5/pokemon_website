@@ -6,12 +6,17 @@ interface props {
     cardId: string;
 }
 
-function CardImage({URL}: props) {
+function CardImage({URL, clickable, cardId}: props) {
 
   return (
     <>
       <div>
-        <CardStyled src={URL} alt="Card image"></CardStyled>
+        { clickable ? (<a href={`/cards/${cardId}`}>
+          <CardStyled src={URL} alt="Card image"></CardStyled>
+
+        </a>):
+         <CardStyled src={URL} alt="Card image"></CardStyled>
+        }
       </div>
     </>
   )
