@@ -6,6 +6,10 @@ function TotalValueBox() {
     const [loading, setLoading] = useState<Boolean>(true);
     const [error, setError] = useState<Boolean>(false);
 
+    //placeholder to get rid of build errors
+    console.log(loading)
+    console.log(error)
+
     async function loadTotalValue() {
         setLoading(true);
         setError(false);

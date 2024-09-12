@@ -1,5 +1,5 @@
 import { TestCardData } from "./testDataInterface";
-import { CardData, TotalValue, TotalValueApiResponse } from "./interfaces";
+import { CardData, TotalValue } from "./interfaces";
 
 
 export async function fetchTestCardData(): Promise<TestCardData | undefined> {
