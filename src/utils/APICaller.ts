@@ -1,5 +1,5 @@
 import { TestCardData } from "./testDataInterface";
-import { CardData, TotalValue } from "./interfaces";
+import { CardData, TotalValue, Set } from "./interfaces";
 
 
 export async function fetchTestCardData(): Promise<TestCardData | undefined> {
@@ -70,5 +70,27 @@ export async function fetchCardData(id: string): Promise<CardData> {
       throw new Error('Failed to fetch card data.');
     }
   }
+
+  export async function fetchAllSets(): Promise<Set[]> {
+    try {
+      const res = await fetch('https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getSets');
+  
+      if (!res.ok) {
+        throw new Error(`Response status: ${res.status}`);
+      }
+  
+      const data: Set[] = await res.json(); 
+  
+      if (data.length > 0) {
+        return data;
+      } else {
+        throw new Error('No set data available.');
+      }
+    } catch (error) {
+      console.error('Error fetching sets:', error);
+      throw new Error('Failed to fetch set data.');
+    }
+  }
+  
   
   
