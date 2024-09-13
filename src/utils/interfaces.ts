@@ -21,3 +21,12 @@ export interface TotalValue {
   total_cardmarket: number;
   total_tcgplayer: number;
 }
+
+export interface Set {
+  id: string;
+  name: string;
+  printed_total: number;
+  total: number;
+  symbol: string;
+  logo: string;
+}
