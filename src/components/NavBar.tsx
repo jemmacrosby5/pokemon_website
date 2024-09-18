@@ -39,17 +39,16 @@ const NavBar: React.FC = () => {
           <a href="/" className="text-xl p-2 rounded">Home</a>
           <a href="/cards" className="text-xl p-2 rounded">Cards</a>
           <Dropdown title="Sets">
-            <li>
-            <a href="/sets" className="block p-2 m-0 text-gray-700 hover:bg-gray-100">All Sets</a>
-            </li>
-            {setList.map((set) =>
-                      <li key={set.id}>
-                      <a href={`/sets/${set.id}`} className="block p-2 m-0 text-gray-700 hover:bg-gray-100">
-                        {set.name}
-                      </a>
-                    </li>
-               )
-              }
+            <a href="/sets" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">All Sets</a>
+            {setList.map((set) => (
+              <a
+                key={set.id}
+                href={`/sets/${set.id}`}
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                {set.name}
+              </a>
+            ))}
           </Dropdown>
           <a href="/about" className="text-xl p-2 rounded">About</a>
         </NavBarSections>

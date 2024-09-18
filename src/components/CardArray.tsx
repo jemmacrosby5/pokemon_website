@@ -47,7 +47,7 @@ function CardArray() {
               {cardArray.map(function (card, index) {
                 return (
                   <div key={index}>
-                    <CardImage URL={card.large_image} clickable={true} cardId={card.id}></CardImage>
+                    <CardImage URL={card.large_image} clickable={true} cardId={card.card_id}></CardImage>
                   </div>
                 )
               })}

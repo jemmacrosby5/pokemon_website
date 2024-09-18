@@ -7,7 +7,6 @@ interface props {
 }
 
 function CardImage({URL, clickable, cardId}: props) {
-
   return (
     <>
       <div>

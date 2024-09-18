@@ -1,5 +1,5 @@
 export interface CardData {
-  id: string;
+  card_id: string;
   name: string;
   hp: string;
   evolvesFrom: string | null;

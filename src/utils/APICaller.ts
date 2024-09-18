@@ -8,8 +8,9 @@ export async function fetchCardData(id: string): Promise<CardData> {
         throw new Error(`Response status: ${res.status}`);
       }
   
-      const data: CardData = await res.json();
-      return data;
+      const data = await res.json();
+      const cardData: CardData = data[0]
+      return cardData;
     } catch (error) {
       console.error('Error fetching card data:', error);
       throw new Error('Failed to fetch card data.');
