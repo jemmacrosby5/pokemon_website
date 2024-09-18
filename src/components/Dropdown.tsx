@@ -29,7 +29,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, children }) => {
 
       </button>
       {isOpen && (
-        <div className="absolute mt-2 w-48 bg-white border border-gray-200 shadow-lg">
+        <div className="absolute w-48 bg-white border border-gray-200 shadow-lg max-h-[90vh] overflow-scroll">
           {children}
         </div>
       )}
