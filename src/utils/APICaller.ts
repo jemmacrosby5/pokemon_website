@@ -1,4 +1,4 @@
-import { CardData, TotalValue, Set } from "./interfaces";
+import { CardData, TotalValue, Set, SetPriceData } from "./interfaces";
 
 export async function fetchCardData(id: string): Promise<CardData> {
     try {
@@ -70,6 +70,22 @@ export async function fetchCardData(id: string): Promise<CardData> {
       } else {
         throw new Error('No set data available.');
       }
+    } catch (error) {
+      console.error('Error fetching sets:', error);
+      throw new Error('Failed to fetch set data.');
+    }
+  }
+
+  export async function fetchSetPriceData(id: string): Promise<SetPriceData> {
+    try {
+      const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getSetPriceData/${id}`);
+  
+      if (!res.ok) {
+        throw new Error(`Response status: ${res.status}`);
+      }
+  
+      const data: SetPriceData = await res.json(); 
+      return data;
     } catch (error) {
       console.error('Error fetching sets:', error);
       throw new Error('Failed to fetch set data.');
