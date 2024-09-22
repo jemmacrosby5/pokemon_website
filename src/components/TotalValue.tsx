@@ -38,9 +38,9 @@ function TotalValueBox() {
                             <p className="text-white text-3xl">
                                 £
                             </p>
-                            <div className="w-4 h-4 bg-white rounded-full animation-bounce"></div>
-                            <div className="w-4 h-4 bg-white rounded-full animation-bounce animation-delay-200"></div>
-                            <div className="w-4 h-4 bg-white rounded-full animation-bounce animation-delay-400"></div>
+                            <div className="w-3 h-3 bg-white rounded-full animation-bounce"></div>
+                            <div className="w-3 h-3 bg-white rounded-full animation-bounce animation-delay-200"></div>
+                            <div className="w-3 h-3 bg-white rounded-full animation-bounce animation-delay-400"></div>
                         </div>
                     ) : error ? (
                         <>

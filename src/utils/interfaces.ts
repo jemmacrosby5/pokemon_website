@@ -17,6 +17,11 @@ export interface CardData {
   row_number: number;
 }
 
+export interface SimpleCardData {
+  id: string;
+  large_image: string;
+}
+
 export interface TotalValue {
   total_cardmarket: number;
   total_tcgplayer: number;
@@ -43,3 +48,4 @@ export interface SetPriceData {
     tcgplayer_avg_last_1d: number;
   }[];
 }
+

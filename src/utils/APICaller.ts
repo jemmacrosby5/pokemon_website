@@ -1,4 +1,4 @@
-import { CardData, TotalValue, Set, SetPriceData } from "./interfaces";
+import { CardData, TotalValue, Set, SetPriceData, SimpleCardData } from "./interfaces";
 
 export async function fetchCardData(id: string): Promise<CardData> {
     try {
@@ -119,11 +119,42 @@ export async function fetchCardAvgPrices(id: string): Promise<SetPriceData> {
     const data: SetPriceData = await res.json(); 
     return data;
   } catch (error) {
-    console.error('Error fetching sets:', error);
-    throw new Error('Failed to fetch set data.');
+    console.error('Failed to fetch card avg prices:', error);
+    throw new Error('Failed to fetch card avg prices.');
   }
 }
 
+export async function fetchSetMetadata(id: string): Promise<Set> {
+  try {
+    const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getSetData/${id}`);
+
+    if (!res.ok) {
+      throw new Error(`Response status: ${res.status}`);
+    }
+
+    const data: Set[] = await res.json(); 
+    return data[0];
+  } catch (error) {
+    console.error('Error fetching sets:', error);
+    throw new Error('Failed to fetch set meta data.');
+  }
+}
+
+export async function fetchSetCards(id: string): Promise<SimpleCardData[]> {
+  try {
+    const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getSetCards/${id}`);
+
+    if (!res.ok) {
+      throw new Error(`Response status: ${res.status}`);
+    }
+
+    const data: SimpleCardData[] = await res.json(); 
+    return data;
+  } catch (error) {
+    console.error('Error fetching sets:', error);
+    throw new Error('Failed to fetch set cards.');
+  }
+}
   
   
   
