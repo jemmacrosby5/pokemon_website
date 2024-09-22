@@ -1,0 +1,98 @@
+[
+    {
+        "id": "ex1",
+        "name": "Ruby & Sapphire"
+    },
+    {
+        "id": "ex2",
+        "name": "Sandstorm"
+    },
+    {
+        "id": "ex3",
+        "name": "Dragon"
+    },
+    {
+        "id": "ex4",
+        "name": "Team Magma vs Team Aqua"
+    },
+    {
+        "id": "ex5",
+        "name": "Hidden Legends"
+    },
+    {
+        "id": "ex6",
+        "name": "FireRed & LeafGreen"
+    },
+    {
+        "id": "ex7",
+        "name": "Team Rocket Returns"
+    },
+    {
+        "id": "ex8",
+        "name": "Deoxys"
+    },
+    {
+        "id": "ex9",
+        "name": "Emerald"
+    },
+    {
+        "id": "ex10",
+        "name": "Unseen Forces"
+    },
+    {
+        "id": "ex11",
+        "name": "Delta Species"
+    },
+    {
+        "id": "ex12",
+        "name": "Legend Maker"
+    },
+    {
+        "id": "ex13",
+        "name": "Holon Phantoms"
+    },
+    {
+        "id": "ex14",
+        "name": "Crystal Guardians"
+    },
+    {
+        "id": "ex15",
+        "name": "Dragon Frontiers"
+    },
+    {
+        "id": "ex16",
+        "name": "Power Keepers"
+    },
+    {
+        "id": "hgss1",
+        "name": "HeartGold & SoulSilver"
+    },
+    {
+        "id": "hgss2",
+        "name": "HS-Unleashed"
+    },
+    {
+        "id": "hgss3",
+        "name": "HS-Undaunted"
+    },
+    {
+        "id": "hgss4",
+        "name": "HS-Triumphant"
+    },
+    {
+        "id": "sv3pt5",
+        "name": "151"
+    },
+    {
+        "id": "np",
+        "name": "Nintendo Black Star Promos"
+    },
+    {
+        "id": "cel25",
+        "name": "Celebrations"
+    },
+    {
+        "id": "g1",
+        "name": "Generations"
+    }
+]

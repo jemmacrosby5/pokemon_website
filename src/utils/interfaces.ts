@@ -1,5 +1,5 @@
 export interface CardData {
-  id: string;
+  card_id: string;
   name: string;
   hp: string;
   evolvesFrom: string | null;
@@ -17,6 +17,11 @@ export interface CardData {
   row_number: number;
 }
 
+export interface SimpleCardData {
+  id: string;
+  large_image: string;
+}
+
 export interface TotalValue {
   total_cardmarket: number;
   total_tcgplayer: number;
@@ -30,3 +35,17 @@ export interface Set {
   symbol: string;
   logo: string;
 }
+
+export interface SetPriceData {
+  cardmarket: {
+    cardmarket_avg_last_30d: number;
+    cardmarket_avg_last_7d: number;
+    cardmarket_avg_last_1d: number;
+  }[];
+  tcgplayer: {
+    tcgplayer_avg_last_30d: number;
+    tcgplayer_avg_last_7d: number;
+    tcgplayer_avg_last_1d: number;
+  }[];
+}
+

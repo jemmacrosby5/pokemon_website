@@ -5,6 +5,7 @@ import CrossIcon from '../assets/cross.svg'
 import NavBarMobile from './NavBarMobile.tsx'
 import { NavBarSections } from '../styles/NavBarStyles.ts';
 import { useState } from "react";
+import setList from '../utils/setList.json';
 
 const NavBar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -39,9 +40,15 @@ const NavBar: React.FC = () => {
           <a href="/cards" className="text-xl p-2 rounded">Cards</a>
           <Dropdown title="Sets">
             <a href="/sets" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">All Sets</a>
-            <a href="/sets/rubysapphire" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Ruby Sapphire</a>
-            <a href="/sets/celebrations" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Celebrations</a>
-            <a href="/sets/151" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">151</a>
+            {setList.map((set) => (
+              <a
+                key={set.id}
+                href={`/sets/${set.id}`}
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                {set.name}
+              </a>
+            ))}
           </Dropdown>
           <a href="/about" className="text-xl p-2 rounded">About</a>
         </NavBarSections>
