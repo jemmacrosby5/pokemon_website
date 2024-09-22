@@ -10,7 +10,7 @@ function TotalValueBox() {
 
     async function loadTotalValue() {
         setLoading(true);
-        setError(true);
+        setError(false);
 
         try {
             const data = await fetchTotalValue();
