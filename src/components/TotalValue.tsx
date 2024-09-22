@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchTotalValue } from "../utils/APICaller";
 import '../styles/animations.css';
+import { SmileySad } from "@phosphor-icons/react";
 
 function TotalValueBox() {
     const [totalValue, setTotalValue] = useState<String>("0");
@@ -9,7 +10,7 @@ function TotalValueBox() {
 
     async function loadTotalValue() {
         setLoading(true);
-        setError(false);
+        setError(true);
 
         try {
             const data = await fetchTotalValue();
@@ -31,33 +32,39 @@ function TotalValueBox() {
         <>
             <div className="flex flex-col gap-4 items-center mx-auto">
 
-                {loading ? (
-                    <div className="border border-white rounded-xl text-center py-1 px-4">
+                <div className="border border-white rounded-xl text-center py-1 px-4">
+                    {loading ? (
                         <div className="flex space-x-2 items-center">
-                            <p className="text-white text-3xl ">
+                            <p className="text-white text-3xl">
                                 £
                             </p>
                             <div className="w-4 h-4 bg-white rounded-full animation-bounce"></div>
                             <div className="w-4 h-4 bg-white rounded-full animation-bounce animation-delay-200"></div>
                             <div className="w-4 h-4 bg-white rounded-full animation-bounce animation-delay-400"></div>
                         </div>
-                    </div>
-
-                ) : (
-
-                    <div className="border border-white rounded-xl text-center py-1 px-4">
+                    ) : error ? (
+                        <>
+                            <div className="flex gap-2 items-center">
+                                <p className="text-white text-3xl">£ </p>
+                                <div className="bg-red-600 rounded flex">
+                                    <p className="text-white text-xl"> Error, sorry </p>
+                                    <SmileySad size={32} color="white" />
+                                </div>
+                            </div>
+                        </>
+                    ) : (
                         <p className="text-white text-3xl">
                             £ {totalValue}
                         </p>
+                    )}
+                </div>
 
-                    </div>
-                )}
                 <p className="text-white text-3xl text-center mt-2">Current value</p>
-                {error && <p className="text-red-500">Error loading value</p>}
             </div>
         </>
     );
 }
 
 export default TotalValueBox;
+
 
