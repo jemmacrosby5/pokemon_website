@@ -39,11 +39,13 @@ function SetDetails() {
         console.log(data)
         setSetPrices(data);
         setPriceLoading(false);
+        console.log(priceLoading)
       }
     } catch (e) {
       console.error('Error loading set price data:', e);
       setPriceLoading(false);
       setPriceError(true);
+      console.log(priceError)
     }
   }
 
