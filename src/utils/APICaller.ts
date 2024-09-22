@@ -91,6 +91,39 @@ export async function fetchCardData(id: string): Promise<CardData> {
       throw new Error('Failed to fetch set data.');
     }
   }
+
+// export async function fetchCardDailyPrice(): Promise<SetPriceData> {
+//   try {
+//     const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getSetPriceData/${id}`);
+
+//     if (!res.ok) {
+//       throw new Error(`Response status: ${res.status}`);
+//     }
+
+//     const data: SetPriceData = await res.json(); 
+//     return data;
+//   } catch (error) {
+//     console.error('Error fetching sets:', error);
+//     throw new Error('Failed to fetch set data.');
+//   }
+// }
+
+export async function fetchCardAvgPrices(id: string): Promise<SetPriceData> {
+  try {
+    const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getCardAvgPrices/${id}`);
+
+    if (!res.ok) {
+      throw new Error(`Response status: ${res.status}`);
+    }
+
+    const data: SetPriceData = await res.json(); 
+    return data;
+  } catch (error) {
+    console.error('Error fetching sets:', error);
+    throw new Error('Failed to fetch set data.');
+  }
+}
+
   
   
   

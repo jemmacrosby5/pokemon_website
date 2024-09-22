@@ -36,7 +36,7 @@ function CardCarousel({ cardArray }: props) {
             >
                 {cardArray.map((card, index) => (
                     <div key={index} className="snap-center flex-shrink-0 w-40">
-                        <a href={`/cards/${card.id}`}>
+                        <a href={`/cards/${card.card_id}`}>
                             <img
                                 src={card.large_image}
                                 alt="Pokemon card image"
