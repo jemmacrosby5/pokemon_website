@@ -10,6 +10,10 @@ import setList from '../utils/setList.json';
 const NavBar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
+  const closeMenu = () =>{
+    setShowMenu(false)
+  }
+
   const openMenu = () => {
     setShowMenu(!showMenu)
   }
@@ -28,8 +32,8 @@ const NavBar: React.FC = () => {
       </div>
 
       {showMenu && (
-        <div className="md:hidden absolute top-full left-0 w-2/3 bg-white text-black shadow-lg">
-          <NavBarMobile />
+        <div className="md:hidden absolute top-full left-0 w-2/3 bg-white text-black shadow-lg z-20">
+          <NavBarMobile closeMenu={closeMenu} />
         </div>
       )}
 
