@@ -61,7 +61,7 @@ function CardDetails() {
             ) : (
                 <>
                     <div className='flex flex-col md:flex-row mx-10 my-8 w-fill '>
-                        <div className='flex m-4 gap-4 justify-center w-1/2'>
+                        <div className='flex m-4 gap-4 justify-center md:w-1/2'>
                             {cardData?.large_image && (
                                 <CardImage URL={cardData?.large_image} clickable={false} cardId={cardData?.card_id} />
                             )}

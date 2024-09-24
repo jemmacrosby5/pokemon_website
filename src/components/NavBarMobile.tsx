@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import caretUpSVG from '../assets/caret-up-black.svg';
 import caretDownSVG from '../assets/caret-down-black.svg';
 import setList from '../utils/setList.json';
+import { useClickOutside } from "../utils/customHooks";
 
-const NavBarMobile: React.FC = () => {
+interface props {
+  closeMenu: () => void;
+}
+
+const NavBarMobile: React.FC<props> = ({ closeMenu }) => {
   const [showSets, setShowSets] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  useClickOutside(wrapperRef, () => {
+    closeMenu();
+  });
 
   const toggleSets = () => {
     setShowSets(!showSets);
@@ -12,7 +21,7 @@ const NavBarMobile: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-4 pt-2 p-4 bg-white rounded-sm text-black max-h-[90vh] overflow-scroll">
+      <div ref={wrapperRef} className="flex flex-col gap-4 pt-2 p-4 bg-white rounded-sm text-black max-h-[90vh] overflow-scroll z-100" >
         <a href="/cards" className="text-xl p-2">Cards</a>
         <button onClick={toggleSets} className="none">
           <div className="flex items-center">
