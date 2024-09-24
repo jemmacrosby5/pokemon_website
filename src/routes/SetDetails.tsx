@@ -70,40 +70,51 @@ function SetDetails() {
           </div>
         </>
       ) : (
-        <div className='p-4'>
+        <div className='p-4 flex flex-col gap-4'>
           <div className='flex items-center gap-2'>
             <h1 className='text-3xl font-bold'>{setData?.name}</h1>
             <img className="max-h-10" src={setData?.symbol} alt={`${setData?.name} symbol`} />
           </div>
-          <div className='bg-slate-400 flex justify-center p-4 rounded'>
+          <div className='bg-slate-200 flex justify-center p-4 rounded'>
             <div className='flex flex-col justify-center gap-2'>
-              <div className='flex items-center gap-2'>
-                <p>7 Day Average:</p>
-                <div className='bg-slate-500 flex flex-col rounded items-center p-2'>
-                  <p>CardMarket</p>
-                  <p>£ {(setPrices?.cardmarket[1].cardmarket_avg_last_7d)?.toFixed(2)}</p>
-                </div>
-                <div className='bg-slate-500 flex flex-col rounded items-center p-2'>
-                  <p>TCG Player</p>
-                  <p>£ {(setPrices?.tcgplayer[1].tcgplayer_avg_last_7d)?.toFixed(2)}</p>
+              <div className='flex w-fit flex-col md:flex-row justify-center'>
+                <p> CardMarket Averages</p>
+                <div className='flex flex-row gap-4 justify-between w-full'>
+                  <div className='flex flex-col items-center'>
+                    <p className='text-sm'>1 DAY </p>
+                    <p className='text-lg'>£ {(setPrices?.cardmarket[2]?.cardmarket_avg_last_1d)?.toFixed(2)}</p>
+                  </div>
+                  <div className='flex flex-col items-center'>
+                    <p className='text-sm'>7 DAY</p>
+                    <p className='text-lg'>£ {(setPrices?.cardmarket[1]?.cardmarket_avg_last_7d)?.toFixed(2)}</p>
+                  </div>
+                  <div className='flex flex-col items-center'>
+                    <p className='text-sm'>30 DAY</p>
+                    <p className='text-lg'>£ {(setPrices?.cardmarket[0]?.cardmarket_avg_last_30d)?.toFixed(2)}</p>
+                  </div>
                 </div>
               </div>
-
-              <div className='flex items-center gap-2'>
-                <p>30 Day Average:</p>
-                <div className='bg-slate-500 flex flex-col rounded items-center p-2'>
-                  <p>CardMarket</p>
-                  <p>£ {(setPrices?.cardmarket[0].cardmarket_avg_last_30d)?.toFixed(2)}</p>
-                </div>
-                <div className='bg-slate-500 flex flex-col rounded items-center p-2'>
-                  <p>TCG Player</p>
-                  <p>£ {(setPrices?.tcgplayer[0].tcgplayer_avg_last_30d)?.toFixed(2)}</p>
+              <div className='flex w-fit justify-center flex-col md:flex-row'>
+                <p> TCGPlayer Averages</p>
+                <div className='flex flex-row gap-4 justify-between w-full'>
+                  <div className='flex flex-col items-center'>
+                    <p className='text-sm'>1 DAY </p>
+                    <p className=' text-lg'>£ {(setPrices?.tcgplayer[2]?.tcgplayer_avg_last_1d)?.toFixed(2)}</p>
+                  </div>
+                  <div className='flex flex-col items-center'>
+                    <p className='text-sm'>7 DAY</p>
+                    <p className='text-lg'>£ {(setPrices?.tcgplayer[1]?.tcgplayer_avg_last_7d)?.toFixed(2)}</p>
+                  </div>
+                  <div className='flex flex-col items-center'>
+                    <p className='text-sm'>30 DAY</p>
+                    <p className='text-lg'>£ {(setPrices?.tcgplayer[0]?.tcgplayer_avg_last_30d)?.toFixed(2)}</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <h2 className='text-2xl font-bold'>Set cardlist:</h2>
+          <h2 className='text-2xl font-bold'>Cardlist:</h2>
           <SetCardsGrid />
         </div>
       )}
