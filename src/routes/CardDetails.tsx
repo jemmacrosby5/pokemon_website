@@ -18,6 +18,7 @@ function CardDetails() {
         try {
             if (cardId) {
                 const data = await fetchCardData(cardId);
+                console.log(data)
                 setCardData(data);
                 setLoading(false);
             }
@@ -74,7 +75,7 @@ function CardDetails() {
                                     <p className='text-lg'>{cardData?.supertype} - {cardData?.subtype}</p>
                                 </div>
                                 <div className='justify-end'>
-                                    <p className='text-lg '>HP {cardData?.hp}</p>
+                                    {cardData?.hp !== null && <p>HP: {cardData?.hp}</p>}
                                     <p className='text-lg'>PokeDex no. {cardData?.number}</p>
                                 </div>
                             </div>
