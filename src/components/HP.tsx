@@ -1,6 +1,6 @@
 interface props {
-    value: String,
-    type: String
+    value: String | undefined,
+    type: String | undefined
 }
 const HPDetails: React.FC<props> = ({value, type}) => {
     return (
