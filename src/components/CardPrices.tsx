@@ -33,8 +33,8 @@ function CardPrices() {
     return (
         <>
             {loading ? (
-                <div className="flex flex-col items-center justify-center h-[75vh]">
-                    <div className='h-60 w-60'>
+                <div className="flex flex-col items-center justify-center h-[33vh]">
+                    <div className='h-40 w-40'>
                         <LightningBoltLoader />
                     </div>
                     <p className='text-3xl text-slate-700'>Loading prices...</p>
