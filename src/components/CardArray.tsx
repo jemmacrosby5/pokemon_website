@@ -33,7 +33,7 @@ function CardArray() {
 
   return (
     <>
-      <p className="text-xl mt-6 ml-20 font-bold">Top 5 most expensive cards:</p>
+      <p className="text-xl mt-6 ml-4 md:ml-20 font-bold">Top 5 most expensive cards:</p>
       {loading && (
         <>
           <CardPageSkeleton />
@@ -42,7 +42,7 @@ function CardArray() {
       {!error && !loading && cardArray && (
         <>
 
-          <div className="hidden lg:block">
+          <div className="hidden md:mx-10 lg:block">
             <div className="flex flex-col p-4 md:flex-row justify-center gap-4 overflow-hidden">
               {cardArray.map(function (card, index) {
                 return (

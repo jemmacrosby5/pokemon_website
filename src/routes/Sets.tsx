@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Set } from '../utils/interfaces'
 import { fetchAllSets } from '../utils/APICaller.ts';
 import SetCard from "../components/SetCard.tsx";
+import LightningBoltLoader from "../components/LoadingSkeletons/LightningBolt.tsx";
 
 function Sets() {
   const [setsData, setSetsData] = useState<Set[]>([]);
@@ -26,10 +27,15 @@ function Sets() {
   }, []);
 
   return (
-    <div className="p-4">
+    <div className="py-6 px-10">
       <h1 className="font-bold text-3xl mb-4">All Sets</h1>
       {loading ? (
-        <p>Loading...</p>
+        <div className="flex flex-col items-center justify-center h-[75vh]">
+        <div className='h-60 w-60'>
+          <LightningBoltLoader />
+        </div>
+        <p className='text-3xl text-slate-700'>Loading set details...</p>
+      </div>
       ) : error ? (
         <p>Error loading sets. Please try again later.</p>
       ) : (

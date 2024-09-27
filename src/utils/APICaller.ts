@@ -155,6 +155,22 @@ export async function fetchSetCards(id: string): Promise<SimpleCardData[]> {
     throw new Error('Failed to fetch set cards.');
   }
 }
+
+export async function fetchAllCards(from: number, to: number): Promise<SimpleCardData[]> {
+  try {
+    const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getAllCards/${from}_${to}`);
+
+    if (!res.ok) {
+      throw new Error(`Response status: ${res.status}`);
+    }
+
+    const data: SimpleCardData[] = await res.json(); 
+    return data;
+  } catch (error) {
+    console.error('Error fetching cards:', error);
+    throw new Error('Failed to fetch all cards.');
+  }
+}
   
   
   

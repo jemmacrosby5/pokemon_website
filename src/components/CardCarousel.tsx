@@ -11,18 +11,18 @@ function CardCarousel({ cardArray }: props) {
 
     const scrollLeft = () => {
         if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+            scrollRef.current.scrollBy({ left: -200, behavior: 'smooth' });
         }
     };
 
     const scrollRight = () => {
         if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+            scrollRef.current.scrollBy({ left: 200, behavior: 'smooth' });
         }
     };
 
     return (
-        <div className="relative w-full flex items-center mx-4 z-0">
+        <div className="relative w-full flex items-center px-4 z-0">
             <button
                 onClick={scrollLeft}
                 className="absolute left-0 z-10 bg-gray-800 text-white p-2 rounded-full ml-2"

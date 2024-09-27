@@ -6,10 +6,10 @@ function Home() {
   return (
     <>
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col md:flex-row bg-custom-gray p-8 gap-8">
-          <div>
+        <div className="flex flex-col md:flex-row bg-custom-gray md:px-20 p-8 gap-8 items-center">
+          <div className="md:max-w-[60%]">
             <p className="text-white text-3xl">About...</p>
-            <p className="text-white text-xl">This is a small personal website to display the values of a Pokemon card collection</p>
+            <p className="text-white text-xl">This website is a personal project by Jem (a Software Engineer) and Dave (a Data Scientist) designed to show the value of a Pokémon card collection. To learn more about us and the project, please visit the <a href='/about' className="underline">About</a> page.</p>
           </div>
           <TotalValueBox />
         </div>
