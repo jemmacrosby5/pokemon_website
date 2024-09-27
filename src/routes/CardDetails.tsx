@@ -5,6 +5,7 @@ import CardImage from '../components/CardImage.tsx';
 import { useParams } from 'react-router-dom';
 import LightningBoltLoader from '../components/LoadingSkeletons/LightningBolt.tsx';
 import { ArrowCircleRight } from '@phosphor-icons/react';
+import HPDetails from '../components/HP.tsx';
 
 function CardDetails() {
     const [cardData, setCardData] = useState<CardData | undefined>(undefined);
@@ -64,7 +65,7 @@ function CardDetails() {
                     <div className='flex flex-col md:flex-row mx-10 my-8 w-fill '>
                         <div className='flex m-4 gap-4 justify-center md:w-1/2'>
                             {cardData?.large_image && (
-                                <CardImage URL={cardData?.large_image} clickable={false} cardId={cardData?.card_id} />
+                                <CardImage URL={cardData?.large_image} clickable={false} cardId={cardData?.card_id}/>
                             )}
 
                         </div>
@@ -74,10 +75,12 @@ function CardDetails() {
                                     <p className='text-2xl font-extrabold'><b>{(cardData?.name)?.toUpperCase()}</b></p>
                                     <p className='text-lg'>{cardData?.supertype} - {cardData?.subtype}</p>
                                 </div>
-                                <div className='justify-end'>
-                                    {cardData?.hp !== null && <p>HP: {cardData?.hp}</p>}
-                                    <p className='text-lg'>PokeDex no. {cardData?.number}</p>
-                                </div>
+                                {cardData?.hp !== undefined &&
+                                    <div className='justify-end'>
+                                        <HPDetails value={cardData?.hp} type={cardData?.primaryType}/>
+                                        <p className='text-lg'>PokeDex no. {cardData?.number}</p>
+                                    </div>
+                                }
                             </div>
 
                             <div className='flex flex-col gap-4 mt-4'>

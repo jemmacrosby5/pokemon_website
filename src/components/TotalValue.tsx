@@ -4,9 +4,20 @@ import '../styles/animations.css';
 import { SmileySad } from "@phosphor-icons/react";
 
 function TotalValueBox() {
-    const [totalValue, setTotalValue] = useState<String>("0");
+    const [totalValue, setTotalValue] = useState<string>("0");
     const [loading, setLoading] = useState<Boolean>(true);
     const [error, setError] = useState<Boolean>(false);
+
+    function formatPrice(price: string) {
+        const amount = parseFloat(price);
+
+        return new Intl.NumberFormat('en-GB', {
+            style: 'currency',
+            currency: 'GBP', 
+            minimumFractionDigits: 0, 
+            maximumFractionDigits: 0, 
+          }).format(Math.floor(amount));
+    }
 
     async function loadTotalValue() {
         setLoading(true);
@@ -30,7 +41,7 @@ function TotalValueBox() {
 
     return (
         <>
-            <div className="flex flex-col gap-4 items-center mx-auto">
+            <div className="flex flex-col gap-2 items-center mx-auto">
 
                 <div className="border border-white rounded-xl text-center py-1 px-4">
                     {loading ? (
@@ -54,11 +65,10 @@ function TotalValueBox() {
                         </>
                     ) : (
                         <p className="text-white text-3xl">
-                            £ {totalValue}
+                            {formatPrice(totalValue)}
                         </p>
                     )}
                 </div>
-
                 <p className="text-white text-3xl text-center mt-2">Current value</p>
             </div>
         </>
