@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { CardData, SetPriceData } from '../utils/interfaces.ts';
-import { fetchCardAvgPrices, fetchCardData } from '../utils/APICaller.ts';
+import { CardData } from '../utils/interfaces.ts';
+import { fetchCardData } from '../utils/APICaller.ts';
 import CardImage from '../components/CardImage.tsx';
 import { useParams } from 'react-router-dom';
 import LightningBoltLoader from '../components/LoadingSkeletons/LightningBolt.tsx';
-import { ArrowCircleRight } from '@phosphor-icons/react';
+import { ArrowCircleRight, SmileySad } from '@phosphor-icons/react';
 import HPDetails from '../components/HP.tsx';
 import CardPrices from '../components/CardPrices.tsx';
 
@@ -82,8 +82,9 @@ function CardDetails() {
 
             )}
             {error && (
-                <div>
-                    <p>oh no theres an error</p>
+                <div className="flex gap-2 items-center rounded bg-red-600 mx-16 p-2 px-4">
+                    <SmileySad size={32} color="white" />
+                    <p className="text-white font-bold">Sorry, we can't get the card details right now...</p>
                 </div>
             )}
         </div>
