@@ -49,3 +49,15 @@ export interface SetPriceData {
   }[];
 }
 
+// for homepage graphs
+export interface PriceData {
+  date: string;
+  price: number;
+}
+
+export interface GraphData {
+  cardmarket: PriceData[];
+  tcgplayer: PriceData[];
+}
+
+

@@ -1,4 +1,4 @@
-import { CardData, TotalValue, Set, SetPriceData, SimpleCardData } from "./interfaces";
+import { CardData, TotalValue, Set, SetPriceData, SimpleCardData, GraphData } from "./interfaces";
 
 export async function fetchCardData(id: string): Promise<CardData> {
     try {
@@ -169,6 +169,22 @@ export async function fetchAllCards(from: number, to: number): Promise<SimpleCar
   } catch (error) {
     console.error('Error fetching cards:', error);
     throw new Error('Failed to fetch all cards.');
+  }
+}
+
+export async function fetchOverviewGraphs(): Promise<GraphData> {
+  try {
+    const res = await fetch('https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getGraphData');
+
+    if (!res.ok) {
+      throw new Error(`Response status: ${res.status}`);
+    }
+
+    const data: GraphData = await res.json(); 
+    return data;
+  } catch (error) {
+    console.error('Error fetching graph data:', error);
+    throw new Error('Failed to fetch graph data.');
   }
 }
   
