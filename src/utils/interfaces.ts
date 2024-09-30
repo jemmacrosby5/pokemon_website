@@ -49,7 +49,7 @@ export interface SetPriceData {
   }[];
 }
 
-// for homepage graphs
+// for graphs
 export interface PriceData {
   date: string;
   price: number;

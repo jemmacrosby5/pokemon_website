@@ -47,36 +47,36 @@ function CardPrices() {
             ) : (
                 <div className="flex flex-col gap-8">
                     <div className='flex w-full flex-col justify-center md:px-10'>
-                        <p className="font-bold text-xl border-b-black border-b-2 mb-2 md:w-1/2">CardMarket Averages</p>
-                        <div className='flex flex-row gap-6 md:gap-10 md:mx-4'>
+                        <p className="font-bold text-lg border-b-black border-b-2 mb-2 ">CardMarket Averages</p>
+                        <div className='flex flex-row gap-6 md:mx-4'>
                             <div className='flex flex-col items-center'>
-                                <p className='text-sm md:text-lg'>1 DAY </p>
-                                <p className='text-lg md:text-2xl'>£ {(prices?.cardmarket[2]?.cardmarket_avg_last_1d)?.toFixed(2)}</p>
+                                <p className='text-sm md:text-md'>1 DAY </p>
+                                <p className='text-lg md:text-xl'>£ {(prices?.cardmarket[2]?.cardmarket_avg_last_1d)?.toFixed(2)}</p>
                             </div>
                             <div className='flex flex-col items-center'>
-                                <p className='text-sm md:text-lg'>7 DAY</p>
-                                <p className='text-lg md:text-2xl'>£ {(prices?.cardmarket[1]?.cardmarket_avg_last_7d)?.toFixed(2)}</p>
+                                <p className='text-sm md:text-md'>7 DAY</p>
+                                <p className='text-lg md:text-xl'>£ {(prices?.cardmarket[1]?.cardmarket_avg_last_7d)?.toFixed(2)}</p>
                             </div>
                             <div className='flex flex-col items-center'>
-                                <p className='text-sm md:text-lg'>30 DAY</p>
-                                <p className='text-lg md:text-2xl'>£ {(prices?.cardmarket[0]?.cardmarket_avg_last_30d)?.toFixed(2)}</p>
+                                <p className='text-sm md:text-md'>30 DAY</p>
+                                <p className='text-lg md:text-xl'>£ {(prices?.cardmarket[0]?.cardmarket_avg_last_30d)?.toFixed(2)}</p>
                             </div>
                         </div>
                     </div>
                     <div className='flex w-full flex-col justify-center md:px-10'>
-                        <p className="font-bold text-xl border-b-black border-b-2 mb-2 md:w-1/2">TCGPlayer Averages</p>
-                        <div className='flex flex-row gap-6 md:gap-10 md:mx-4'>
+                        <p className="font-bold text-lg border-b-black border-b-2 mb-2">TCGPlayer Averages</p>
+                        <div className='flex flex-row gap-6 md:mx-4'>
                             <div className='flex flex-col items-center'>
-                                <p className='text-sm md:text-lg'>1 DAY </p>
-                                <p className='text-lg md:text-2xl'>£ {(prices?.tcgplayer[2]?.tcgplayer_avg_last_1d)?.toFixed(2)}</p>
+                                <p className='text-sm md:text-md'>1 DAY </p>
+                                <p className='text-lg md:text-xl'>£ {(prices?.tcgplayer[2]?.tcgplayer_avg_last_1d)?.toFixed(2)}</p>
                             </div>
                             <div className='flex flex-col items-center'>
-                                <p className='text-sm md:text-lg'>7 DAY</p>
-                                <p className='text-lg md:text-2xl'>£ {(prices?.tcgplayer[1]?.tcgplayer_avg_last_7d)?.toFixed(2)}</p>
+                                <p className='text-sm md:text-md'>7 DAY</p>
+                                <p className='text-lg md:text-xl'>£ {(prices?.tcgplayer[1]?.tcgplayer_avg_last_7d)?.toFixed(2)}</p>
                             </div>
                             <div className='flex flex-col items-center'>
-                                <p className='text-sm md:text-lg'>30 DAY</p>
-                                <p className='text-lg md:text-2xl'>£ {(prices?.tcgplayer[0]?.tcgplayer_avg_last_30d)?.toFixed(2)}</p>
+                                <p className='text-sm md:text-md'>30 DAY</p>
+                                <p className='text-lg md:text-xl'>£ {(prices?.tcgplayer[0]?.tcgplayer_avg_last_30d)?.toFixed(2)}</p>
                             </div>
                         </div>
                     </div>

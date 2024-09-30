@@ -172,9 +172,25 @@ export async function fetchAllCards(from: number, to: number): Promise<SimpleCar
   }
 }
 
-export async function fetchOverviewGraphs(): Promise<GraphData> {
+export async function fetchHomePageGraph(): Promise<GraphData> {
   try {
     const res = await fetch('https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getGraphData');
+
+    if (!res.ok) {
+      throw new Error(`Response status: ${res.status}`);
+    }
+
+    const data: GraphData = await res.json(); 
+    return data;
+  } catch (error) {
+    console.error('Error fetching graph data:', error);
+    throw new Error('Failed to fetch graph data.');
+  }
+}
+
+export async function fetchCardGraph(id: string): Promise<GraphData> {
+  try {
+    const res = await fetch(`https://rcrp5d3em6.execute-api.eu-west-2.amazonaws.com/dev/getCardDailyPrices/${id}`);
 
     if (!res.ok) {
       throw new Error(`Response status: ${res.status}`);
