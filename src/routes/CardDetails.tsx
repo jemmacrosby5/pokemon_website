@@ -66,12 +66,12 @@ function CardDetails() {
                                 }
                             </div>
 
-                            <div className='flex items-center'>
+                            <h2 className='font-bold text-xl mt-4'>PRICES</h2>
+                            <div className='flex flex-col md:flex-row items-center gap-10'>
                                 <div className='flex flex-col gap-2 mt-4'>
-                                    <h2 className='font-bold text-xl'>PRICES</h2>
                                     <CardPrices />
                                 </div>
-                                <div>
+                                <div className='bg-white w-[320px] h-[160px] md:w-[480px] md:h-[250px]'>
                                     <CardGraph />
                                 </div>
                             </div>

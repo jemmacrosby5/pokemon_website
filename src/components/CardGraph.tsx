@@ -11,6 +11,9 @@ const PriceGraph: React.FC = () => {
     const [graphData, setGraphData] = useState<GraphData>();
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<boolean>(false);
+        // to fix!!
+        console.log(loading)
+        console.log(error)
     const { cardId } = useParams();
 
     async function loadGraphData() {
@@ -39,7 +42,7 @@ const PriceGraph: React.FC = () => {
         }),
         datasets: [
             {
-                label: 'Cardmarket',
+                label: 'CARDMARKET',
                 data: graphData?.cardmarket.map(item => item.price),
                 borderColor: 'rgba(75,192,192,1)',
                 backgroundColor: 'rgba(75,192,192,0.2)',
@@ -47,7 +50,7 @@ const PriceGraph: React.FC = () => {
                 tension: 0.4,
             },
             {
-                label: 'TCGPlayer',
+                label: 'TCGPLAYER',
                 data: graphData?.tcgplayer.map(item => item.price),
                 borderColor: 'rgba(255,99,132,1)',
                 backgroundColor: 'rgba(255,99,132,0.2)',
@@ -65,7 +68,7 @@ const PriceGraph: React.FC = () => {
                 position: 'top' as const,
                 labels: {
                     font: {
-                        size: 16, 
+                        size: 14, 
                         color: 'black',
                     },
                 },
@@ -82,13 +85,13 @@ const PriceGraph: React.FC = () => {
                     display: true,
                     text: 'Date',
                     font: {
-                        size: 16,
+                        size: 14,
                         color: 'black',
                     },
                 },
                 ticks: {
                     font: {
-                        size: 16,
+                        size: 14,
                         color: 'black',
                     },
                 },
@@ -96,14 +99,14 @@ const PriceGraph: React.FC = () => {
             y: {
                 title: {
                     display: true,
-                    text: 'Price',
+                    text: 'Price /£',
                     font: {
-                        size: 20,
+                        size: 14,
                         color: 'black',
                     },
                     ticks: {
                         font: {
-                            size: 16,
+                            size: 14,
                             color: 'black',
                         },
                     },

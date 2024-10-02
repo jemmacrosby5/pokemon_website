@@ -10,6 +10,9 @@ const PriceGraph: React.FC = () => {
     const [graphData, setGraphData] = useState<GraphData>();
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<boolean>(false);
+    // to fix!!
+    console.log(loading)
+    console.log(error)
 
     async function loadGraphData() {
         setLoading(true)
@@ -29,10 +32,13 @@ const PriceGraph: React.FC = () => {
     }, []);
 
     const chartData = {
-        labels: graphData?.cardmarket.map(item => item.date),
+        labels: graphData?.cardmarket.map(item => {
+            const date = new Date(item.date);
+            return date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' });
+        }),
         datasets: [
             {
-                label: 'Cardmarket',
+                label: 'CARDMARKET',
                 data: graphData?.cardmarket.map(item => item.price),
                 borderColor: 'rgba(75,192,192,1)',
                 backgroundColor: 'rgba(75,192,192,0.2)',
@@ -40,7 +46,7 @@ const PriceGraph: React.FC = () => {
                 tension: 0.4,
             },
             {
-                label: 'TCGPlayer',
+                label: 'TCGPLAYER',
                 data: graphData?.tcgplayer.map(item => item.price),
                 borderColor: 'rgba(255,99,132,1)',
                 backgroundColor: 'rgba(255,99,132,0.2)',
@@ -71,9 +77,9 @@ const PriceGraph: React.FC = () => {
             y: {
                 title: {
                     display: true,
-                    text: 'Price',
+                    text: 'Price /£',
                 },
-                beginAtZero: true,
+                beginAtZero: false,
             },
         },
     };
