@@ -7,7 +7,7 @@ import { SmileySad } from "@phosphor-icons/react";
 import Paginator from "../components/Paginator";
 
 function CardPage() {
-  const [startNumber, setStartNumber] = useState<number>(0)
+  const [endNumber, setEndNumber] = useState<number>(20)
   const [pageNumber, setPageNumber] = useState<number>(1)
   const [cardData, setCardData] = useState<SimpleCardData[]>()
   const [loading, setLoading] = useState<boolean>(true)
@@ -16,7 +16,7 @@ function CardPage() {
   async function loadCardData() {
     setLoading(true)
     try {
-      const data = await fetchAllCards(startNumber, (startNumber+20));
+      const data = await fetchAllCards((endNumber-19), endNumber);
       setCardData(data);
       setLoading(false);
 
@@ -36,22 +36,17 @@ function CardPage() {
   };
 
   useEffect(() => {
-    setStartNumber((pageNumber - 1) * 20);
+    setEndNumber(pageNumber * 20);
   }, [pageNumber]);
 
   useEffect(() => {
     loadCardData();
-  }, [startNumber]);
+  }, [endNumber]);
 
   return (
     <>
-      <div className="py-6 px-10 flex flex-col gap-4">
+      <div className="py-6 px-8 flex flex-col gap-4">
         <h1 className="font-bold text-3xl mb-4">All Cards</h1>
-        <Paginator
-          pageNumber={pageNumber}
-          increasePage={increasePage}
-          decreasePage={decreasePage}
-        />
         {loading ? (
           <div className="flex flex-col items-center justify-center h-[75vh]">
             <div className='h-60 w-60'>
@@ -67,14 +62,22 @@ function CardPage() {
         ) : (
           <>
             {cardData && cardData?.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {cardData.map((card, key) => (
-                  <CardImage key={key}URL={card?.large_image} clickable={true} cardId={card?.id} />
+                  <CardImage key={key} URL={card?.large_image} clickable={true} cardId={card?.id} />
                 ))}
               </div>
             )}
+
           </>
         )}
+        <div className="flex justify-center">
+          <Paginator
+            pageNumber={pageNumber}
+            increasePage={increasePage}
+            decreasePage={decreasePage}
+          />
+        </div>
       </div>
     </>
   )

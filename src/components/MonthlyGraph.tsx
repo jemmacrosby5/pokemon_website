@@ -77,7 +77,7 @@ const PriceGraph: React.FC = () => {
             y: {
                 title: {
                     display: true,
-                    text: 'Price /£',
+                    text: 'Total Collection Value / £',
                 },
                 beginAtZero: false,
             },

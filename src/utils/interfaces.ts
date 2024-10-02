@@ -62,8 +62,10 @@ export interface GraphData {
 
 //for table
 export interface TableCardInfo {
-  name: string;
-  large_image: string;
+  card_name: string;
+  set_name: string;
+  id:string;
+  symbol:string;
   cardmarket_avg_last_30d: number;
   cardmarket_avg_last_7d: number;
   tcgplayer_avg_last_30d: number;

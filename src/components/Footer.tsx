@@ -3,9 +3,11 @@ const Footer: React.FC = () => {
 
     return (
         <>
-            <div className="bg-custom-gray p-6 justify-center">
-                <div className='items-center mx-auto'>
-                    <p className="text-white">literally no rights reserved</p>
+            <div className="bg-custom-red p-6 flex justify-center">
+                <div className='items-center mx-auto flex flex-col gap-2'>
+                    <p className="text-white">All data shown retrieved from the <a href='pokemontcg.io' className='underline'>Pokemon TGC API</a> and the <a className="underline" href='frankfurter.dev'>Frankfurter API</a></p>
+                    <p className="text-white">This website is not produced, endorsed, supported or affiliated with the Pokemon Company</p>
+                    <p className="text-white">Literally no rights reserved</p>
                     <div className='flex flex-row gap-4' >
                         <a className='flex flex-row gap-2 items-center' href="https://github.com/jemmacrosby5/pokemon_website">
                             <img src={github} className='h-8' />
