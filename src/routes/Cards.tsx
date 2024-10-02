@@ -14,9 +14,9 @@ function CardPage() {
   const [error, setError] = useState<boolean>(false)
 
   async function loadCardData() {
+    setLoading(true)
     try {
       const data = await fetchAllCards(startNumber, (startNumber+20));
-      console.log(data)
       setCardData(data);
       setLoading(false);
 
@@ -28,7 +28,6 @@ function CardPage() {
   }
 
   const increasePage = () => {
-    console.log("increase page called")
     setPageNumber((pageNumber) => pageNumber + 1);
   };
 
@@ -46,8 +45,8 @@ function CardPage() {
 
   return (
     <>
-      <div className="py-6 px-10">
-        <h1 className="font-bold text-3xl mb-4">All Cards - I'm a work in progress!</h1>
+      <div className="py-6 px-10 flex flex-col gap-4">
+        <h1 className="font-bold text-3xl mb-4">All Cards</h1>
         <Paginator
           pageNumber={pageNumber}
           increasePage={increasePage}
@@ -58,7 +57,7 @@ function CardPage() {
             <div className='h-60 w-60'>
               <LightningBoltLoader />
             </div>
-            <p className='text-3xl text-slate-700'>Loading set details...</p>
+            <p className='text-3xl text-slate-700'>Loading cards...</p>
           </div>
         ) : error ? (
           <div className="flex gap-2 items-center rounded bg-red-600 mx-16 p-2 px-4">

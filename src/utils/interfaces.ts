@@ -49,3 +49,25 @@ export interface SetPriceData {
   }[];
 }
 
+// for graphs
+export interface PriceData {
+  date: string;
+  price: number;
+}
+
+export interface GraphData {
+  cardmarket: PriceData[];
+  tcgplayer: PriceData[];
+}
+
+//for table
+export interface TableCardInfo {
+  name: string;
+  large_image: string;
+  cardmarket_avg_last_30d: number;
+  cardmarket_avg_last_7d: number;
+  tcgplayer_avg_last_30d: number;
+  tcgplayer_avg_last_7d: number;
+}
+
+

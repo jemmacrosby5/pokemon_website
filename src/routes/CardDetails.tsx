@@ -7,10 +7,10 @@ import LightningBoltLoader from '../components/LoadingSkeletons/LightningBolt.ts
 import { ArrowCircleRight, SmileySad } from '@phosphor-icons/react';
 import HPDetails from '../components/HP.tsx';
 import CardPrices from '../components/CardPrices.tsx';
+import CardGraph from '../components/CardGraph.tsx';
 
 function CardDetails() {
     const [cardData, setCardData] = useState<CardData | undefined>(undefined);
-
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<boolean>(false);
 
@@ -20,7 +20,6 @@ function CardDetails() {
         try {
             if (cardId) {
                 const data = await fetchCardData(cardId);
-                console.log(data)
                 setCardData(data);
                 setLoading(false);
             }
@@ -67,9 +66,14 @@ function CardDetails() {
                                 }
                             </div>
 
-                            <div className='flex flex-col gap-4 mt-4'>
-                                <h2 className='font-bold text-xl'>PRICES</h2>
-                                <CardPrices />
+                            <h2 className='font-bold text-xl mt-4'>PRICES</h2>
+                            <div className='flex flex-col md:flex-row items-center gap-10'>
+                                <div className='flex flex-col gap-2 mt-4'>
+                                    <CardPrices />
+                                </div>
+                                <div className='bg-white w-[320px] h-[160px] md:w-[480px] md:h-[250px]'>
+                                    <CardGraph />
+                                </div>
                             </div>
                             <button className='bg-slate-400 rounded p-2 ml-auto flex items-center gap-2 w-fit self-end mt-6'
                                 onClick={() => window.location.href = `/sets/${cardData?.set_id}`}>

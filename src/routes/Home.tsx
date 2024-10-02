@@ -1,4 +1,6 @@
 import CardArray from "../components/CardArray";
+import PriceGraph from "../components/MonthlyGraph";
+import TopTenTable from "../components/TopTenTable";
 import TotalValueBox from "../components/TotalValue";
 
 function Home() {
@@ -18,11 +20,11 @@ function Home() {
 
         <div className="bg-slate-200">
           <div className="flex lg:flex-row justify-center mx-auto flex-col items-center ">
-            <div className="m-4 bg-slate-800 h-72 w-2/3 lg:w-full lg:mx-12 rounded mx-2 flex items-center justify-center">
-              <p className="text-white">I'm a graph</p>
+            <div className="m-4 bg-white md:h-72 w-[360px] h-[200px] md:w-2/3 lg:w-full lg:mx-12 rounded md:mx-2 flex items-center justify-center">
+              <PriceGraph/>
             </div>
             <div className="m-4 bg-slate-800 h-72 w-2/3 lg:w-full lg:mx-12 rounded mx-2 flex items-center justify-center">
-              <p className="text-white">I'm a graph</p>
+              <TopTenTable/>
             </div>
           </div>
         </div>
