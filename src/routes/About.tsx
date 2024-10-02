@@ -5,12 +5,12 @@ function About() {
     <>
       <div className="flex flex-col h-full m-2 gap-2">
         <div className="flex flex-col md:flex-row gap-2">
-          <div className="bg-custom-gray flex justify-center md:w-1/2">
-            <div className="flex flex-col items-center gap-2 p-4 px-6">
+          <div className="flex justify-center md:w-1/2 ">
+            <div className="flex flex-col items-center gap-2 p-4 px-6 md:border-r-4 ">
               <img src="https://ih1.redbubble.net/image.4043453697.8709/raf,360x360,075,t,fafafa:ca443f4786.u1.jpg" className="rounded-full h-16"></img>
-              <p className="text-white text-3xl">Jemma</p>
-              <p className="text-white text-lg">jemmajsc@gmail.com</p>
-              <div className="text-white">
+              <p className="text-3xl">Jemma</p>
+              <p className="text-lg">jemmajsc@gmail.com</p>
+              <div >
                 Hey,<br />
                 <br />
                 My name is Jem and I’m responsible for the front end. Dave wouldn’t stop pestering me about getting this site live so thought I’d use my skills to try bring his vision to life.
@@ -29,12 +29,12 @@ function About() {
               </div>
             </div>
           </div>
-          <div className=" bg-custom-gray flex justify-center md:w-1/2">
+          <div className="flex justify-center md:w-1/2">
             <div className="flex flex-col items-center gap-2 p-4 px-6">
-              <img src="https://media.wired.com/photos/5f87340d114b38fa1f8339f9/master/w_1600%2Cc_limit/Ideas_Surprised_Pikachu_HD.jpg" className="rounded-full h-16"></img>
-              <p className="text-white text-3xl">Dave</p>
-              <p className="text-white text-lg">dave.bat35@outlook.com</p>
-              <div className="text-white">
+              <img src="public/tangela.png" className="h-24"></img>
+              <p className="text-3xl">Dave</p>
+              <p className="text-lg">dave.bat35@outlook.com</p>
+              <div>
                 Hey,<br />
                 <br />
                 I’m Dave and and I’m responsible for the entire back-end of this application! This project is something I’ve wanted to work on for a while now and this page is here to give a bit more background about what I do and why this project exists. <br />

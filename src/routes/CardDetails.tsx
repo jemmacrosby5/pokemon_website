@@ -52,7 +52,7 @@ function CardDetails() {
                             )}
 
                         </div>
-                        <div className='flex flex-col w-full align-middle bg-slate-200 rounded px-8 py-4'>
+                        <div className='flex flex-col w-full align-middle rounded px-8 py-4'>
                             <div className='border-stone-950 border-b-2 flex flex-col md:flex-row justify-between'>
                                 <div>
                                     <p className='text-2xl font-extrabold'><b>{(cardData?.name)?.toUpperCase()}</b></p>
