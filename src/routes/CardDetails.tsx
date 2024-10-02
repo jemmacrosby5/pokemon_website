@@ -45,8 +45,8 @@ function CardDetails() {
                 </div>
             ) : (
                 <>
-                    <div className='flex flex-col md:flex-row m-6 md:m-14 w-fill z-0 gap-8 md:gap-24'>
-                        <div className='flex m-4 gap-4 justify-center md:w-1/3'>
+                    <div className='flex flex-col md:flex-row m-6 md:m-14 w-fill z-0 gap-8 md:gap-18'>
+                        <div className='flex m-4 gap-4 justify-center md:w-2/5'>
                             {cardData?.large_image && (
                                 <CardImage URL={cardData?.large_image} clickable={false} cardId={cardData?.card_id} />
                             )}
@@ -65,20 +65,18 @@ function CardDetails() {
                                     </div>
                                 }
                             </div>
-
-                            <h2 className='font-bold text-xl mt-4'>PRICES</h2>
-                            <div className='flex flex-col md:flex-row items-center gap-10'>
-                                <div className='flex flex-col gap-2 mt-4'>
+                            <div className='flex flex-col md:flex-row items-center gap-10 mt-6'>
+                                <div className='flex flex-col gap-2'>
                                     <CardPrices />
                                 </div>
-                                <div className='bg-white w-[320px] h-[160px] md:w-[480px] md:h-[250px]'>
+                                <div className=' mt-4 w-[320px] h-[160px] md:w-[480px] md:h-[250px]'>
                                     <CardGraph />
                                 </div>
                             </div>
-                            <button className='bg-slate-400 rounded p-2 ml-auto flex items-center gap-2 w-fit self-end mt-6'
+                            <button className='bg-custom-light-blue rounded p-2 ml-auto flex items-center gap-2 w-fit self-end mt-6'
                                 onClick={() => window.location.href = `/sets/${cardData?.set_id}`}>
-                                <p>See full set</p>
-                                <ArrowCircleRight size={20} />
+                                <p className='text-white'>See full set</p>
+                                <ArrowCircleRight size={20} color="white"/>
                             </button>
                         </div>
                     </div>

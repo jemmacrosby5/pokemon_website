@@ -18,8 +18,9 @@ export default {
         'custom-red': '#1a3341',
         'custom-orange': '#f77f00',
         'custom-yellow': '#fcbf49',
-        'custom-beige': '#346073',
-        'custom-light-blue': "#d5e6f6"
+        'custom-light-blue': '#4785a6',
+        'custom-CM-colour': "rgb(75,192,192)",
+        'custom-TCG-colour': "rgb(255,99,132)"
       },
     },
   },

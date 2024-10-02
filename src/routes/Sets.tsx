@@ -34,7 +34,7 @@ function Sets() {
         <div className='h-60 w-60'>
           <LightningBoltLoader />
         </div>
-        <p className='text-3xl text-slate-700'>Loading set details...</p>
+        <p className='text-3xl text-slate-700'>Loading sets...</p>
       </div>
       ) : error ? (
         <p>Error loading sets. Please try again later.</p>
