@@ -31,33 +31,33 @@ function TopTenTable() {
         <div >
             {loading ? (
                 <div className="flex flex-col items-center justify-center h-[75vh]">
-                    <div className='h-40 w-40'>
+                    <div className='h-20 w-20'>
                         <LightningBoltLoader />
                     </div>
-                    <p className='text-xl text-slate-700'>Loading card details...</p>
+                    <p className='text-xl text-slate-700'>Loading top 10 cards...</p>
                 </div>
             ) : (
                 <>
                     <table className="table-auto border-collapse border border-slate-400 my-6">
                         <tr className='border border-slate-400'>
-                            <th className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>Rank</th>
-                            <th className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>Card</th>
-                            <th className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>Set</th>
-                            <th className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>CM 7 day</th>
-                            <th className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>CM 30 day</th>
-                            <th className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>TCG 7 day</th>
-                            <th className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>TCG 30 day</th>
+                            <th className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>Rank</th>
+                            <th className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>Card</th>
+                            <th className='border border-slate-400 text-center px-2 md:px-2 text-xs md:text-md'>Set</th>
+                            <th className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>CM 7 day</th>
+                            <th className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>CM 30 day</th>
+                            <th className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>TCG 7 day</th>
+                            <th className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>TCG 30 day</th>
                         </tr>
                         <tbody className='border border-slate-600'>
                         {tableData?.map((row, index)=> {
                             return(<tr>
-                                <td className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>{index+1}</td>
-                                <td className='border border-slate-400 text-center md:px-2 text-sm md:text-md'><a href={`/cards/${row.id}`}>{row.card_name}</a></td>
-                                <td className='border border-slate-400 text-center md:px-2 text-sm md:text-md'><img className="h-6"src={row.symbol}/></td>
-                                <td className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>£{row.cardmarket_avg_last_7d.toFixed(2)}</td>
-                                <td className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>£{row.cardmarket_avg_last_30d.toFixed(2)}</td>
-                                <td className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>£{row.tcgplayer_avg_last_7d.toFixed(2)}</td>
-                                <td className='border border-slate-400 text-center md:px-2 text-sm md:text-md'>£{row.tcgplayer_avg_last_30d.toFixed(2)}</td>
+                                <td className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>{index+1}</td>
+                                <td className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'><a href={`/cards/${row.id}`}>{row.card_name}</a></td>
+                                <td className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'><img className="h-6"src={row.symbol}/></td>
+                                <td className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>£{row.cardmarket_avg_last_7d.toFixed(2)}</td>
+                                <td className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>£{row.cardmarket_avg_last_30d.toFixed(2)}</td>
+                                <td className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>£{row.tcgplayer_avg_last_7d.toFixed(2)}</td>
+                                <td className='border border-slate-400 text-center px-1 md:px-2 text-xs md:text-md'>£{row.tcgplayer_avg_last_30d.toFixed(2)}</td>
                             </tr>)
                         })}
                         </tbody>
