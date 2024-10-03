@@ -7,7 +7,7 @@ function About() {
         <div className="flex flex-col md:flex-row gap-2">
           <div className="flex justify-center md:w-1/2 ">
             <div className="flex flex-col items-center gap-2 p-4 px-6 md:border-r-4 ">
-              <img src="/ditto.png" className="h-16"></img>
+              <img src="/Ditto.png" className="h-16"></img>
               <p className="text-3xl font-bold">Jemma</p>
               <p className="text-lg">jemmajsc@gmail.com</p>
               <div >
