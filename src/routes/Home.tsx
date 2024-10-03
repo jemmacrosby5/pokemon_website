@@ -18,12 +18,12 @@ function Home() {
 
         <CardArray />
 
-        <div className="bg-slate-200">
-          <div className="flex lg:flex-row justify-center mx-auto flex-col items-center ">
+        <div className="bg-slate-200 h-fit">
+          <div className="flex lg:flex-row justify-center mx-auto flex-col items-center gap-6">
             <div className="m-4 md:h-72 w-[360px] h-[200px] md:w-2/3 lg:w-full lg:mx-12 rounded md:mx-2 flex items-center justify-center">
               <PriceGraph/>
             </div>
-            <div className="m-4 my-10 h-72 w-2/3 lg:w-full lg:mx-12 rounded mx-2 flex items-center justify-center">
+            <div className="m-4 mt-10 mb-24 md:my-10 h-72 w-2/3 lg:w-full lg:mx-12 rounded mx-2 flex items-center justify-center">
               <TopTenTable/>
             </div>
           </div>
