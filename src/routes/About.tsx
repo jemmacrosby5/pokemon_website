@@ -67,7 +67,7 @@ function About() {
               <li>The web application should be dynamic</li>
               <li>These design principles enables us to create a complete architecture that looks as follow</li>
             </ol>
-          <img src='public/architecture_diagram.png'></img>
+          <img src='/architecture_diagram.png'></img>
         </div>
       </div >
     </>
